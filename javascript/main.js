@@ -1,6 +1,16 @@
 var SpeechRecognition = window.webkitSpeechRecognition;
 var msg = new SpeechSynthesisUtterance();
 var recognition = new SpeechRecognition();
+var item = ["What do you call a pasta in a bowl of noodles|||||| a impasta","what do you call an aligater in a vest? ||| an \"investigator\"","why did the banana go to the doctor? || because he didn't peel well", "what do you call a sleeping bull ? || a buldozer","when is the best time to go to the dentist ? || At tooth-hurty!","what has four wheels and flies ? || a garbage truck!"];
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = mm + '/' + dd + '/' + yyyy;
+document.write(today);
+var u;
+var speak;
 var search;
 var newsearch;
 
@@ -47,8 +57,34 @@ recognition.onresult = function run (event) {
     }else if (newcontent == "who made you"){
       msg.text = "M e g h made me he is the smartest boy XD";
       window.speechSynthesis.speak(msg);
-    }
-  
+    }else if (newcontent =="show youtube history"){
+      msg.text = "Showing Youtube history";
+      window.speechSynthesis.speak(msg);
+      window.open("https://www.youtube.com/feed/history", "_blank");
+    }else if (newcontent == "open youtube dashboard"){
+      msg.text = "Openiing Your dashboard";
+      window.speechSynthesis.speak(msg);
+      window.open("https://studio.youtube.com/channel/videos", "_blank");
+      }else if (newcontent.slice(0,5) == "speak")
+      {
+        speak = newcontent.slice(7, newcontent.length);
+        msg.text = speak;
+        window.speechSynthesis.speak(msg);
+      }else if (newcontent == "open google"){
+        msg.text = "Openiing google but you can also search by saying , search and your query";
+      window.speechSynthesis.speak(msg);
+      window.open("https://www.google.com", "_blank");
+      }else if (newcontent == "joke"){
+        u = 0;
+        
+        msg.text = item[Math.floor(Math.random()*item.length)];
+        
+        window.speechSynthesis.speak(msg);
+      }else if (newcontent == "date"){
+        today = mm + '/' + dd + '/' + yyyy;
+        msg.text = today;
+        window.speechSynthesis.speak(msg);
+      }
   document.getElementById("caught").innerHTML = content;
 
   
