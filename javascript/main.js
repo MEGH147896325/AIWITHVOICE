@@ -7,7 +7,7 @@ var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 
-today = mm + '/' + dd + '/' + yyyy;
+today = dd + '/' + mm + '/' + yyyy;
 document.write(today);
 var u;
 var speak;
@@ -18,6 +18,13 @@ function start() {
   document.getElementById("caught").innerHTML = "";
   recognition.start();
 }
+/*
+I tried to make a greet function but didn't work 
+function greet(){
+  msg.text = "Hello . nice to meet you ... I am redy to listen your commands"; 
+  window.speechSynthesis.speak(msg);
+}
+*/
 
 recognition.onresult = function run (event) {
   
@@ -84,7 +91,17 @@ recognition.onresult = function run (event) {
         today = mm + '/' + dd + '/' + yyyy;
         msg.text = today;
         window.speechSynthesis.speak(msg);
+      }else if (newcontent.slice(0,14) == "youtube search"){
+        search = newcontent.slice(14,newcontent.length);
+        
+        newsearch = search.replace(/ /g, "+");
+        msg.text = "searching on Youtube for " + search;
+        window.speechSynthesis.speak(msg);
+        
+        window.open("https://www.youtube.com/results?search_query=" + newsearch, "_blank");
+  
       }
+      
   document.getElementById("caught").innerHTML = content;
 
   
