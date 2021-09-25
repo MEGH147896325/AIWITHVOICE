@@ -6,6 +6,7 @@ var today = new Date();
 var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
+var time = Date();
 
 today = dd + '/' + mm + '/' + yyyy;
 document.write(today);
@@ -18,19 +19,19 @@ function start() {
   document.getElementById("caught").innerHTML = "";
   recognition.start();
 }
-/*
-I tried to make a greet function but didn't work 
-function greet(){
-  msg.text = "Hello . nice to meet you ... I am redy to listen your commands"; 
-  window.speechSynthesis.speak(msg);
+function yt(){
+  window.open("https://www.youtube.com/channel/UCPbmLHnn-YBr2gYXJeUcVwQ", "_blank");
 }
-*/
+function ds(){
+  window.open("https://discord.gg/at349CpywW" , "_blank");
+}
 
 recognition.onresult = function run (event) {
   
   var content = event.results[0][0].transcript;
   
    var newcontent =  content.toLowerCase();
+   
    
   if (newcontent == "open youtube"||newcontent == "start youtube"){
     window.open("https://www.youtube.com", "_blank");
@@ -118,10 +119,11 @@ recognition.onresult = function run (event) {
         window.speechSynthesis.speak(msg);
         
         window.open("https://discord.com/channels/@me", "_blank");
+      
       }
       
   document.getElementById("caught").innerHTML = content;
 
   
   }
-  
+
