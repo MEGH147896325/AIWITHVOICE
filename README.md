@@ -2,12 +2,10 @@
 List of commands
 
 Speak 
-  
   <what you want Ai to speak>
   
 Search 
-  
-  <what you want Ai to search>
+ <what you want Ai to search>
 
 YouTube Search 
     
