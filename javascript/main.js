@@ -1,3 +1,4 @@
+//not fun making this
 var SpeechRecognition = window.webkitSpeechRecognition;
 var msg = new SpeechSynthesisUtterance();
 var recognition = new SpeechRecognition();
