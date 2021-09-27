@@ -28,6 +28,8 @@ function ds(){
   window.open("https://discord.gg/at349CpywW" , "_blank");
 }
 function st(){
+
+  newcontent
 t1 = document.getElementById("tcontent").value ;
 tcontent = t1.toLowerCase();
   if (tcontent == "open youtube"||tcontent == "start youtube"){
@@ -102,7 +104,7 @@ tcontent = t1.toLowerCase();
         window.speechSynthesis.speak(msg);
       }
       else if (tcontent.slice(0,14) == "youtube search"){
-        search = newcontent.slice(14,newcontent.length);
+        search =tcontent.slice(14 , tcontent.length);
         
         newsearch = search.replace(/ /g, "+");
         msg.text = "searching on Youtube for " + search;
