@@ -29,7 +29,7 @@ function ds(){
 }
 function st(){
 
-  newcontent
+
 t1 = document.getElementById("tcontent").value ;
 tcontent = t1.toLowerCase();
   if (tcontent == "open youtube"||tcontent == "start youtube"){
