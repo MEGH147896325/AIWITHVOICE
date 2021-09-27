@@ -222,4 +222,3 @@ recognition.onresult = function run (event) {
 
   
   }
-
