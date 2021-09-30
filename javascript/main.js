@@ -83,7 +83,7 @@ tcontent = t1.toLowerCase();
     }
     else if (tcontent.slice(0,5) == "speak")
     {
-        speak = tcontent.slice(7, tcontent.length);
+        speak = tcontent.slice(6, tcontent.length);
         msg.text = speak;
         window.speechSynthesis.speak(msg);
     }
